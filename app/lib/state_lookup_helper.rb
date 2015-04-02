@@ -1,5 +1,4 @@
-class StateLookupHelper
-
+module StateLookupHelper
   def state_names
     {
       "01" => "AL", "02" => "AK", "04" => "AZ", "05" => "AR", "06" => "CA",

@@ -5,6 +5,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 gem 'pg'
 gem 'figaro'
+gem "faraday"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
