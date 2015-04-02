@@ -17,17 +17,6 @@ class CensusService
     PovertyDataGenerator.call(data, year)
   end
 
-
-
-  #@poverty_data = StatePovertyData.where(state: params[:state]).where(year: params[:year])
-  #render json: @poverty_data
-
-  #def under_poverty_percent
-    #object.population_under_poverty / object.population
-  #end
-
-  #CensusService.new.save_poverty_data(2010)
-
   def generate_tables(table_number)
     fields= ""
 
