@@ -1,7 +1,7 @@
 class PovertyDataGenerator
-  include StateLookupHelper
+  extend StateLookupHelper
 
-  def call(data, year)
+  def self.call(data, year)
     data.each_with_index do |record, i|
       unless i == 0
         a = StatePovertyData.new

@@ -5,6 +5,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 gem 'pg'
 gem 'figaro'
+gem "faraday"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
@@ -14,6 +15,8 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
+  gem "factory_girl_rails",     '~> 4.0'
+  gem "database_cleaner"
 end
 
 # To use ActiveModel has_secure_password

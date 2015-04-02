@@ -6,25 +6,16 @@ class CensusService
 
   def get_poverty_data(year)
     @connection.get do |req|
-      req.url "#{year}/acs5", key: Figaro.census_key
+      req.url "#{year}/acs5", key: Figaro.env.census_key
       req.params["get"] = generate_tables("B17001")
       req.params["for"] = all_states
     end
   end
 
   def save_poverty_data(year)
-    data = get_poverty_data(year)
+    data = parse(get_poverty_data(year))
     PovertyDataGenerator.call(data, year)
   end
-
-  #@poverty_data = StatePovertyData.where(state: params[:state]).where(year: params[:year])
-  #render json: @poverty_data
-
-  #def under_poverty_percent
-    #object.population_under_poverty / object.population
-  #end
-
-  #CensusService.new.save_poverty_data(2010)
 
   def generate_tables(table_number)
     fields= ""
@@ -40,4 +31,9 @@ class CensusService
     "state:*"
   end
 
+  private
+
+  def parse(data)
+    JSON.parse(data.body)
+  end
 end
