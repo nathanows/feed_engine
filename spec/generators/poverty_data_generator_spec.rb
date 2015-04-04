@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CensusService do
-  let(:generator) { PovertyDataGenerator.new }
-
   it "creates a StatePovertyData object from the api data arrays" do
     data = [["B17001_001E","B17001_002E","B17001_003E","B17001_004E",
             "B17001_005E","B17001_006E","B17001_007E","B17001_008E",
@@ -20,10 +18,7 @@ RSpec.describe CensusService do
             "19792","6699","13010","66482",
             "68221","48964","47968","36666",
             "22773","27573","01"]]
-    generator.call(data)
+    PovertyDataGenerator.call(data, 2010)
     expect(StatePovertyData.count).to eql(1)
   end
-
-
-
 end
