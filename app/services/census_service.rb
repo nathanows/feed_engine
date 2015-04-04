@@ -17,6 +17,9 @@ class CensusService
     PovertyDataGenerator.call(data, year)
   end
 
+  def get_commute_time_data(year)
+  end
+
   def generate_tables(table_number)
     fields= ""
 
