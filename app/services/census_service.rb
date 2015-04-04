@@ -5,22 +5,32 @@ class CensusService
   end
 
   def save_poverty_data(year)
-    data = parse(get_poverty_data(year))
+    data = parse(get_data('poverty', 30, year))
     PovertyDataGenerator.call(data, year)
   end
 
-  def get_poverty_data(year)
+  private
+
+  def get_data(type, cols, year)
     @connection.get do |req|
       req.url "#{year}/acs5", key: Figaro.env.census_key
-      req.params["get"] = generate_tables("B17001")
+      req.params["get"] = generate_tables(table_lookup(type), cols)
       req.params["for"] = all_states
     end
   end
 
-  def generate_tables(table_number)
+  def table_lookup(type)
+    case type
+    when 'poverty' then 'B17001'
+    else
+      raise ArgumentError
+    end
+  end
+
+  def generate_tables(table_number, cols)
     fields= ""
 
-    (1..30).each do |x|
+    (1..cols).each do |x|
       fields += "#{table_number}_#{'%03i' % x}E,"
     end
 
@@ -30,8 +40,6 @@ class CensusService
   def all_states
     "state:*"
   end
-
-  private
 
   def parse(data)
     JSON.parse(data.body)
