@@ -7,13 +7,10 @@ class CensusService
   def save_poverty_data(year)
     data = parse(get_data("poverty", 30, year))
     PovertyDataGenerator.call(data, year)
-    StatePovertyData.where(year: 2010).count
   end
 
   def save_commute_time_data(year)
-    data = parse(get_data("commute_time", 30, year))
-    CommuteTimeDataGenerator.call(data, year)
-    StateCommuteTimeData.where(year: 2010).count
+    data = parse(get_data("commute_time", 4, year))
   end
 
   private

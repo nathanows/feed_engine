@@ -21,4 +21,6 @@ RSpec.describe CensusService do
     PovertyDataGenerator.call(data, 2010)
     expect(StatePovertyData.count).to eql(1)
   end
+
+  
 end
