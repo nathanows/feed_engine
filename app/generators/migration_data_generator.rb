@@ -3,7 +3,7 @@ class MigrationDataGenerator
     data.each_with_index do |record, i|
       unless i == 0
         a = StateMigrationData.new
-        a.year
+        a.year                                          = year
         a.median_age                                    = record[0]
         a.same_house_1_year_ago                         = record[1]
         a.moved_within_the_same_county                  = record[2]
