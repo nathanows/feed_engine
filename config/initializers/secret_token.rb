@@ -16,4 +16,4 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-Usausa::Application.config.secret_token = 'aefd98fd2d82a0ea0837b651da91c9ed3e9ed7761523e15af5c98e20d1fad2109d311f086b62973e4e8fce628b08e814de2f3b37a5205f756512eaf6234ad020'
+Usausa::Application.config.secret_token = "aefd98fd2d82a0ea0837b651da91c9ed3e9ed7761523e15af5c98e20d1fad2109d311f086b62973e4e8fce628b08e814de2f3b37a5205f756512eaf6234ad020"

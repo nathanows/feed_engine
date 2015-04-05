@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CensusService do
   it "creates a StatePovertyData object from the api data arrays" do

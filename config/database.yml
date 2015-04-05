@@ -82,4 +82,4 @@ production:
   <<: *default
   database: usausa_production
   username: usausa
-  password: <%= ENV['USAUSA_DATABASE_PASSWORD'] %>
+  password: <%= ENV["USAUSA_DATABASE_PASSWORD"] %>
