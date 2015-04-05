@@ -7,7 +7,11 @@ class CensusService
   def save_poverty_data(year)
     data = parse(get_data('poverty', 30, year))
     PovertyDataGenerator.call(data, year)
-    StatePovertyData.where(year: 2010).count
+  end
+
+  def save_migration_data(year)
+    data = parse(get_data('migration', 6, year))
+    MigrationDataGenerator.call(data, year)
   end
 
   private
@@ -23,6 +27,7 @@ class CensusService
   def table_lookup(type)
     case type
     when 'poverty' then 'B17001'
+    when 'migration' then 'B07002'
     else
       raise ArgumentError
     end
