@@ -8,6 +8,12 @@ Rails.application.routes.draw do
         get "/data", to: "data#index"
         get "/tweets", to: "tweets#index"
       end
+
+      namespace :commute_time do
+        get "/", to: "commute_time#index"
+        get "/data", to: "data#index"
+        get "/tweets", to: "tweets#index"
+      end
     end
   end
 
