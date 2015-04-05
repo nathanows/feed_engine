@@ -4,14 +4,14 @@ class EducationDataGenerator
   def self.call(data, year)
     data.each_with_index do |record, i|
       unless i == 0
-        a = StatePovertyData.new
+        a = StateEducationData.new
         a.year                        = year
         a.population                  = record[0]
-        a.population_below_poverty    = record[1]
-        a.male_below_poverty          = record[2]
-        a.male_below_poverty_under5   = record[3]
-        a.male_below_poverty_5        = record[4]
-        a.male_below_poverty_6to11    = record[5]
+        a.population_male    = record[1]
+        a.male_18to24          = record[2]
+        a.male_high_school_18to24 = record[3]
+        a.male_some_college        = record[4]
+        a.male_bachelor_18to24    = record[5]
         a.male_below_poverty_12to14   = record[6]
         a.male_below_poverty_15       = record[7]
         a.male_below_poverty_16to17   = record[8]
