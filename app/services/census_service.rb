@@ -7,7 +7,6 @@ class CensusService
   def save_poverty_data(year)
     data = parse(get_data('poverty', 30, year))
     PovertyDataGenerator.call(data, year)
-    StatePovertyData.where(year: 2010).count
   end
 
   def save_migration_data(year)

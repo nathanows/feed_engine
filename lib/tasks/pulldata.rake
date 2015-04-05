@@ -7,7 +7,6 @@ namespace :pull_data do
   desc "Pull 2010 census poverty data and save to StatePovertyData model"
   task census_poverty_2010: :environment do
     puts "Pulling census poverty data..."
-    results = CensusService.new.save_poverty_data(2010)
-    puts "Data pulled! There are now #{results} records in the StatePovertyData model."
+    puts "Data pulled! There are now #{StatePovertyData.where(year: 2010).count} records in the StatePovertyData model."
   end
 end

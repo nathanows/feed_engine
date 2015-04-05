@@ -15,11 +15,11 @@ RSpec.describe CensusService do
     end
   end
 
-  it "returns back census population json data" do
-    VCR.use_cassette("population data", :re_record_interval => 7.days ) do
+  it "returns census migration data" do
+    VCR.use_cassette("migration data", :re_record_interval => 7.days ) do
       json_data = service.save_migration_data(2010)
       expect(json_data.first.first).to eq("B07002_001E")
-      expect(json_data.first.last).to eq("state")
+      expect(json_data.take(2).last[5]).to eq("27.3")
       expect(json_data.length).to eq(53)
       json_data.each do |columns|
         expect(columns.count).to eq(7)
