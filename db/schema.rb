@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402201607) do
+ActiveRecord::Schema.define(version: 20150405011929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "state_migration_data", force: :cascade do |t|
+    t.integer "year"
+    t.integer "median_age"
+    t.integer "same_house_1_year_ago"
+    t.integer "moved_within_the_same_county"
+    t.integer "moved_from_different_county_within_same_state"
+    t.integer "moved_from_different_state"
+    t.integer "moved_from_abroad"
+    t.string  "state"
+  end
 
   create_table "state_poverty_data", force: :cascade do |t|
     t.integer "year"
