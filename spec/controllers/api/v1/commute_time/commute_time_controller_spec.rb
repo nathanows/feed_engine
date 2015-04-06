@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe Api::V1::CommuteTime::CommuteTimeController, type: :controller do
   describe "Get index" do
     it "returns general data about migration dataset" do
+      skip
       get :index
       data = JSON.parse(response.body)
 
