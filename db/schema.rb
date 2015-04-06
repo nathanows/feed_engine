@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.hstore "geometry"
   end
 
+  create_table "state_education_data", force: :cascade do |t|
+    t.integer "year"
+    t.integer "population"
+    t.integer "no_schooling_completed"
+    t.integer "regular_high_school_diploma"
+    t.integer "ged_or_alternative"
+    t.integer "bachelors_degree"
+    t.integer "masters_degree"
+    t.integer "professional_degree"
+    t.integer "doctorate_degree"
+    t.string  "state"
+  end
+
   create_table "state_migration_data", force: :cascade do |t|
     t.integer "year"
     t.string  "median_age"
@@ -69,5 +82,4 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.integer "female_below_poverty_over75"
     t.string  "state"
   end
-
 end
