@@ -4,6 +4,7 @@ namespace :pull_data do
     Rake::Task["pull_data:map_geojson"].execute
     Rake::Task["pull_data:census_migration_2010"].execute
     Rake::Task["pull_data:census_poverty_2010"].execute
+    Rake::Task["pull_data:census_education_2012"].execute
   end
 
   desc "Pull 2010 census migration data and save to StateMigrationData model"
@@ -27,5 +28,13 @@ namespace :pull_data do
     puts "Pulling geojson map data..."
     MapService.save_map_data
     puts "Map data pulled! There are now #{MapState.count} records in the MapState model."
+  end
+
+  desc "Pull 2012 census education data and save to StateEducationData model"
+  task census_education_2012: :environment do
+    puts "Pulling census education data..."
+    CensusService.new.save_education_data(2012)
+    puts "Data pulled! There are now #{StateEducationData.where(year: 2012).
+      count} records in the StateEducationData model."
   end
 end
