@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405033056) do
+ActiveRecord::Schema.define(version: 20150406163924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "state_commute_time_data", force: :cascade do |t|
+    t.integer  "total_commuting_workers"
+    t.integer  "commuting_60_to_89_min"
+    t.integer  "commuting_over_89_min"
+    t.string   "state"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "state_migration_data", force: :cascade do |t|
     t.integer "year"
