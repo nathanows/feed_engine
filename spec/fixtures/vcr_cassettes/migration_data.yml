@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Mon, 06 Apr 2015 04:06:40 GMT
+      - Mon, 06 Apr 2015 05:13:07 GMT
       Vary:
       - Accept-Encoding, User-Agent
       Content-Length:
@@ -93,5 +93,5 @@ http_interactions:
         ["37.5","42","25","25","25","24.8","56"],
         [null,null,null,null,null,null,"72"]]
     http_version: 
-  recorded_at: Mon, 06 Apr 2015 04:06:40 GMT
+  recorded_at: Mon, 06 Apr 2015 05:13:08 GMT
 recorded_with: VCR 2.9.3
