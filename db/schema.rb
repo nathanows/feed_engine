@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.hstore "geometry"
   end
 
+  create_table "state_migration_data", force: :cascade do |t|
+    t.integer "year"
+    t.string  "median_age"
+    t.string  "same_house_1_year_ago"
+    t.string  "moved_within_the_same_county"
+    t.string  "moved_from_different_county_within_same_state"
+    t.string  "moved_from_different_state"
+    t.string  "moved_from_abroad"
+    t.string  "state"
+  end
+
   create_table "state_poverty_data", force: :cascade do |t|
     t.integer "year"
     t.integer "population"
