@@ -18,12 +18,12 @@ RSpec.describe CensusService do
   it "returns json census average commute time data for 2010" do
     VCR.use_cassette("commute time data", :re_record_interval => 7.days) do
       json_data = service.save_commute_time_data(2010)
-      # expect(json_data.first.first).to eql("C08136_001E")
-      # expect(json_data.first.last).to eql("state")
-      # expect(json_data.length).to eql(4)
-      # json_data.each do |state_data|
-      #   expect(state_data.length).to eql(31)
-      # end
+      expect(json_data.first.first).to eql("C08136_001E")
+      expect(json_data.first.last).to eql("state")
+      expect(json_data.length).to eql(4)
+      json_data.each do |state_data|
+        expect(state_data.length).to eql()
+      end
     end
   end
 
