@@ -9,8 +9,14 @@ class CensusService
     PovertyDataGenerator.call(data, year)
   end
 
+<<<<<<< HEAD
   def save_commute_time_data(year)
     data = parse(get_data("commute_time", 4, year))
+=======
+  def save_migration_data(year)
+    data = parse(get_data('migration', 6, year))
+    MigrationDataGenerator.call(data, year)
+>>>>>>> ffac0c625e9875e4f8a8033ece82bcc26fafc5e6
   end
 
   private
@@ -25,8 +31,13 @@ class CensusService
 
   def table_lookup(type)
     case type
+<<<<<<< HEAD
     when "poverty" then "B17001"
     when "commute_time" then "C08136"
+=======
+    when 'poverty' then 'B17001'
+    when 'migration' then 'B07002'
+>>>>>>> ffac0c625e9875e4f8a8033ece82bcc26fafc5e6
     else
       raise ArgumentError
     end
