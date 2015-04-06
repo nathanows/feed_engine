@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CensusService do
+RSpec.describe PovertyDataGenerator do
   it "creates a StatePovertyData object from the api data arrays" do
     data = [["B17001_001E","B17001_002E","B17001_003E","B17001_004E",
             "B17001_005E","B17001_006E","B17001_007E","B17001_008E",
