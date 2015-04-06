@@ -8,6 +8,12 @@ Rails.application.routes.draw do
         get '/data', to: 'data#index'
         get '/tweets', to: 'tweets#index'
       end
+
+      namespace :migration do
+        get '/', to: 'migration#index'
+        get '/data', to: 'data#index'
+        get '/tweets', to: 'tweets#index'
+      end
     end
   end
 

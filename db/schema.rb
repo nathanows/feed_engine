@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405015040) do
+ActiveRecord::Schema.define(version: 20150405033056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20150405015040) do
     t.integer "masters_degree"
     t.integer "professional_degree"
     t.integer "doctorate_degree"
+    t.string  "state"
+  end
+
+  create_table "state_migration_data", force: :cascade do |t|
+    t.integer "year"
+    t.string  "median_age"
+    t.string  "same_house_1_year_ago"
+    t.string  "moved_within_the_same_county"
+    t.string  "moved_from_different_county_within_same_state"
+    t.string  "moved_from_different_state"
+    t.string  "moved_from_abroad"
     t.string  "state"
   end
 
