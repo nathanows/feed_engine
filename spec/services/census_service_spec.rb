@@ -17,17 +17,19 @@ RSpec.describe CensusService do
 
   it "returns back education census json data" do
     VCR.use_cassette("education data", :re_record_interval => 7.days) do
-      json_data = service.save_education_data(2010)
-      expect(json_data.first.first).to eql("B15001_001E")
-      expect(json_data.first.second).to eql("B15001_002E")
-      expect(json_data.first.third).to eql("B15001_003E")
-      expect(json_data.first.fourth).to eql("B15001_006E")
-      expect(json_data.first.fifth).to eql("B15001_007E")
-      expect(json_data.first[5]).to eql("B15001_009E")
+      json_data = service.save_education_data(2012)
+      expect(json_data.first.first).to eql("B15003_001E")
+      expect(json_data.first.second).to eql("B15003_002E")
+      expect(json_data.first.third).to eql("B15003_017E")
+      expect(json_data.first.fourth).to eql("B15003_018E")
+      expect(json_data.first[4]).to eql("B15003_022E")
+      expect(json_data.first[5]).to eql("B15003_023E")
+      expect(json_data.first[6]).to eql("B15003_024E")
+      expect(json_data.first[7]).to eql("B15003_025E")
       expect(json_data.first.last).to eql("state")
       expect(json_data.length).to eql(53)
       json_data.each do |state_data|
-        expect(state_data.length).to eql(44)
+        expect(state_data.length).to eql(9)
       end
     end
   end
