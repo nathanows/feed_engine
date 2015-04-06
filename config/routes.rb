@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get "/map", to: "map#show"
+      namespace :map do
+        get '/', to: 'map#index'
+      end
 
       namespace :poverty do
         get "/", to: "poverty#index"
