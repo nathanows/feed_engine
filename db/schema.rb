@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405033056) do
+ActiveRecord::Schema.define(version: 20150405205332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "map_states", force: :cascade do |t|
+    t.string "short_name"
+    t.string "name"
+    t.float  "census_area"
+    t.hstore "geometry"
+  end
 
   create_table "state_migration_data", force: :cascade do |t|
     t.integer "year"
