@@ -61,8 +61,9 @@ class CensusService
     elsif specifier == "marital"
       fields = ""
       (1..11).each do |x|
-        fields += "#{table_number}_#{'%03i' % x}E"
+        fields += "#{table_number}_#{'%03i' % x}E,"
       end
+      fields[0..-2]
     end
   end
 
