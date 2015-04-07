@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.describe Api::V1::Marital::DataController, type: :controller do
   describe 'get index' do
+    skip
     it "returns list of all data as json" do
       create(:state_marital_data)
       get :index
