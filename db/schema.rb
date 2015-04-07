@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.hstore "geometry"
   end
 
+
+  create_table "state_commute_time_data", force: :cascade do |t|
+    t.integer "total_commuting_workers"
+    t.integer "commuting_60_to_89_min"
+    t.integer "commuting_over_89_min"
+  end
+
   create_table "state_education_data", force: :cascade do |t|
     t.integer "year"
     t.integer "population"

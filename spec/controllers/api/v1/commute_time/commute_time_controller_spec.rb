@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Api::V1::Migration::MigrationController, type: :controller do
-
+RSpec.describe Api::V1::CommuteTime::CommuteTimeController, type: :controller do
   describe "Get index" do
     it "returns general data about migration dataset" do
       skip
@@ -12,5 +11,4 @@ RSpec.describe Api::V1::Migration::MigrationController, type: :controller do
       expect(data).to be_a(Hash)
     end
   end
-
 end

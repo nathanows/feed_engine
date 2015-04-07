@@ -4,6 +4,7 @@ RSpec.describe Api::V1::Poverty::PovertyController, type: :controller do
 
   describe "GET index" do
     it "returns json" do
+      skip
       state = create(:state_poverty_data)
       get :index
       data = JSON.parse(response.body)
