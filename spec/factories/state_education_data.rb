@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :state_education_data do
-    year                                          2010
+    year                                          2012
     population                                    4000000
     no_schooling_completed                        300000
     regular_high_school_diploma                   400000
