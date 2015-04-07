@@ -8,6 +8,7 @@ RSpec.describe Api::V1::Migration::DataController, type: :controller do
     it "returns list of all data as json" do
       get :index
       data = JSON.parse(response.body)["data"]
+
       expect(response).to have_http_status(:success)
       expect(data.first["year"]).to eq(2010)
       expect(data.first["median_age"]).to eq("38")
@@ -17,6 +18,7 @@ RSpec.describe Api::V1::Migration::DataController, type: :controller do
     it "returns json from state-migration-data-serializer" do
       get :index
       data = JSON.parse(response.body)["data"]
+
       expect(response).to have_http_status(:success)
       expect(data.first["same_house_percent"]).to eq(40.0)
       expect(data.first["same_county_percent"]).to eq(30.0)
