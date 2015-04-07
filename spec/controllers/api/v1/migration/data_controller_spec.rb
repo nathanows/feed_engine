@@ -20,9 +20,6 @@ RSpec.describe Api::V1::Migration::DataController, type: :controller do
       data = JSON.parse(response.body)["data"]
 
       expect(response).to have_http_status(:success)
-      expect(data.first["same_house_percent"]).to eq(40.0)
-      expect(data.first["same_county_percent"]).to eq(30.0)
-      expect(data.first["different_county_same_state_percent"]).to eq(10.0)
       expect(data.first["different_state_percent"]).to eq(10.0)
       expect(data.first["from_abroad_percent"]).to eq(10.0)
     end

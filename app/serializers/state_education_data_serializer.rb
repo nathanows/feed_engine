@@ -11,42 +11,25 @@ class StateEducationDataSerializer < ActiveModel::Serializer
              :doctorate_degree,
              :state,
              :no_schooling_completed_percent,
-             :regular_high_school_diploma_percent,
-             :ged_or_alternative_percent,
-             :bachelors_degree_percent,
-             :masters_degree_percent,
-             :professional_degree_percent,
-             :doctorate_degree_percent
+             :high_school_diploma_or_ged_percent,
+             :college_or_above_percent
 
   def no_schooling_completed_percent
     to_percent(object.no_schooling_completed)
   end
 
-  def regular_high_school_diploma_percent
-    to_percent(object.regular_high_school_diploma)
+  def high_school_diploma_or_ged_percent
+    to_percent(object.regular_high_school_diploma, object.ged_or_alternative)
   end
 
-  def ged_or_alternative_percent
-    to_percent(object.ged_or_alternative)
+  def college_or_above_percent
+    to_percent(object.bachelors_degree,
+               object.masters_degree,
+               object.professional_degree,
+               object.doctorate_degree)
   end
 
-  def bachelors_degree_percent
-    to_percent(object.bachelors_degree)
-  end
-
-  def masters_degree_percent
-    to_percent(object.masters_degree)
-  end
-
-  def professional_degree_percent
-    to_percent(object.professional_degree)
-  end
-
-  def doctorate_degree_percent
-    to_percent(object.doctorate_degree)
-  end
-
-  def to_percent(attribute1)
-    attribute1 / object.population.to_f * 100
+  def to_percent(*attributes)
+    attributes.reduce(:+) / object.population.to_f * 100
   end
 end
