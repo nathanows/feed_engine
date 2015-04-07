@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405205332) do
+ActiveRecord::Schema.define(version: 20150407020139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.string "name"
     t.float  "census_area"
     t.hstore "geometry"
-  end
-
-
-  create_table "state_commute_time_data", force: :cascade do |t|
-    t.integer "total_commuting_workers"
-    t.integer "commuting_60_to_89_min"
-    t.integer "commuting_over_89_min"
   end
 
   create_table "state_education_data", force: :cascade do |t|
@@ -89,4 +82,5 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.integer "female_below_poverty_over75"
     t.string  "state"
   end
+
 end

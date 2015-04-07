@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Api::V1::CommuteTime::DataController, type: :controller do
+RSpec.describe Api::V1::Marital::DataController, type: :controller do
   describe 'get index' do
     it "returns list of all data as json" do
       skip
