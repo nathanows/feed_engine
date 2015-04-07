@@ -8,9 +8,9 @@ class TwitterService
     end
   end
 
-  def find(dataset)
+  def find(dataset, num_tweets = 500)
     tweets = client.search(terms(dataset), result_type: "recent", lang: "en")
-      .take(500)
+      .take(num_tweets)
     TwitterDataGenerator.call(tweets, dataset)
   end
 
