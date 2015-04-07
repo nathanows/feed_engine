@@ -16,17 +16,6 @@ RSpec.describe CensusService do
     end
   end
 
-<<<<<<< HEAD
-  it "returns json census average commute time data for 2010" do
-    VCR.use_cassette("commute time data", :re_record_interval => 7.days) do
-      json_data = service.save_commute_time_data(2010)
-      binding.pry
-      expect(json_data.first.first).to eql("C08136_001E")
-      expect(json_data.first.last).to eql("state")
-      expect(json_data.length).to eql(4)
-      json_data.each do |state_data|
-        expect(state_data.length).to eql()
-=======
   it "returns back education census json data" do
     VCR.use_cassette("education data", :re_record_interval => 7.days) do
       json_data = service.save_education_data(2012)
@@ -42,7 +31,6 @@ RSpec.describe CensusService do
       expect(json_data.length).to eql(53)
       json_data.each do |state_data|
         expect(state_data.length).to eql(9)
->>>>>>> 4eb44372fa8c7816cac3e7f5546b410e2d6e2f70
       end
     end
   end

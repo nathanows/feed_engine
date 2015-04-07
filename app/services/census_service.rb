@@ -9,7 +9,6 @@ class CensusService
     PovertyDataGenerator.call(data, year)
   end
 
-
   def save_commute_time_data(year)
     data = parse(get_data("commute_time", year))
     CommuteTimeDataGenerator.call(data, year)
@@ -35,23 +34,6 @@ class CensusService
     end
   end
 
-<<<<<<< HEAD
-  def table_lookup(type)
-    case type
-    when "poverty" then "B17001"
-    when "commute_time" then "C08136"
-    when 'migration' then 'B07002'
-    else
-      raise ArgumentError
-    end
-  end
-
-  def generate_tables(table_number, cols)
-    fields= ""
-
-    (1..cols).each do |x|
-      fields += "#{table_number}_#{'%03i' % x}E,"
-=======
   def generate_tables(table_number, specifier=nil)
     if specifier == "poverty"
       fields= ""
@@ -76,7 +58,10 @@ class CensusService
         fields += "#{table_number}_#{'%03i' % x}E,"
       end
       fields[0..-2]
->>>>>>> 4eb44372fa8c7816cac3e7f5546b410e2d6e2f70
+    elsif specifier == "marriages"
+      fields = ""
+      (1..(number of rows)).each do |x|
+      end
     end
   end
 
@@ -89,6 +74,7 @@ class CensusService
     when "poverty" then "B17001"
     when "migration" then "B07002"
     when "education" then "B15003"
+    when "commute_time" then "B08136"
     else
       raise ArgumentError "The Table type doesn't exist"
     end
