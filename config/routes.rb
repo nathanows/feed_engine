@@ -6,9 +6,15 @@ Rails.application.routes.draw do
       end
 
       namespace :poverty do
-        get '/', to: 'poverty#index'
-        get '/data', to: 'data#index'
-        get '/tweets', to: 'tweets#index'
+        get "/", to: "poverty#index"
+        get "/data", to: "data#index"
+        get "/tweets", to: "tweets#index"
+      end
+
+      namespace :marital do
+        get "/", to: "marital#index"
+        get "/data", to: "data#index"
+        get "/tweets", to: "tweets#index"
       end
 
       namespace :migration do

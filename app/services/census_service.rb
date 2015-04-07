@@ -9,6 +9,11 @@ class CensusService
     PovertyDataGenerator.call(data, year)
   end
 
+  def save_marital_data(year)
+    data = parse(get_data("marital", year))
+    maritalDataGenerator.call(data, year)
+  end
+
   def save_migration_data(year)
     data = parse(get_data("migration", year))
     MigrationDataGenerator.call(data, year)
@@ -53,6 +58,12 @@ class CensusService
         fields += "#{table_number}_#{'%03i' % x}E,"
       end
       fields[0..-2]
+    elsif specifier == "marital"
+      fields = ""
+      (1..11).each do |x|
+        fields += "#{table_number}_#{'%03i' % x}E"
+      end
+      fields[0..-2]
     end
   end
 
@@ -65,6 +76,7 @@ class CensusService
     when "poverty" then "B17001"
     when "migration" then "B07002"
     when "education" then "B15003"
+    when "marital" then "B12501"
     else
       raise ArgumentError "The Table type doesn't exist"
     end

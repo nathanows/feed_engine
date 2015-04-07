@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe PovertyDataGenerator do
   it "creates a StatePovertyData object from the api data arrays" do
@@ -21,4 +21,6 @@ RSpec.describe PovertyDataGenerator do
     PovertyDataGenerator.call(data, 2010)
     expect(StatePovertyData.count).to eql(1)
   end
+
+  
 end
