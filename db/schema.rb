@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405205332) do
+ActiveRecord::Schema.define(version: 20150407184108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.integer "masters_degree"
     t.integer "professional_degree"
     t.integer "doctorate_degree"
+    t.string  "state"
+  end
+
+  create_table "state_marital_data", force: :cascade do |t|
+    t.integer "year"
+    t.integer "population"
+    t.integer "male_population"
+    t.integer "male_never_married"
+    t.integer "male_ever_married"
+    t.integer "male_ever_married_and_married_last_year"
+    t.integer "male_ever_married_and_not_married_last_year"
+    t.integer "female_population"
+    t.integer "female_never_married"
+    t.integer "female_ever_married"
+    t.integer "female_ever_married_and_married_last_year"
+    t.integer "female_ever_married_and_not_married_last_year"
     t.string  "state"
   end
 
