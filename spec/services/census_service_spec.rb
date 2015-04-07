@@ -4,7 +4,6 @@ RSpec.describe CensusService do
   let(:service) { CensusService.new }
 
   it "returns back census poverty json data" do
-    skip
     VCR.use_cassette("poverty data", :re_record_interval => 7.days) do
       json_data = service.save_poverty_data(2010)
       expect(json_data.first.first).to eql("B17001_001E")
@@ -36,7 +35,6 @@ RSpec.describe CensusService do
   end
 
   it "returns census migration data" do
-    skip
     VCR.use_cassette("migration data", :re_record_interval => 7.days ) do
       json_data = service.save_migration_data(2010)
       expect(json_data.first.first).to eq("B07002_001E")
