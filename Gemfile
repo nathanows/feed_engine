@@ -6,6 +6,7 @@ gem 'spring', :group => :development
 gem 'pg'
 gem 'figaro'
 gem "faraday"
+gem "twitter"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
