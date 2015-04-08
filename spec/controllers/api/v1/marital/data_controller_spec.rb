@@ -5,7 +5,7 @@ RSpec.describe Api::V1::Marital::DataController, type: :controller do
     it "returns list of all data as json" do
       create(:state_marital_data)
       get :index
-      data = JSON.parse(response.body)
+      data = JSON.parse(response.body)["data"]
       expect(response).to have_http_status(:success)
       expect(data.first).to be_a(Hash)
       expect(data.first["year"]).to eq(2010)
