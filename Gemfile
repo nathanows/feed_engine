@@ -14,6 +14,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.0"
   gem "pry"
   gem 'hashie'
+  gem 'awesome_print',          require: "ap"
 end
 
 group :test do

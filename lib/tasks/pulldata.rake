@@ -92,7 +92,7 @@ namespace :pull_data do
   end
 
   desc "Pull marital twitter data and save to Tweet model"
-  task twitter_migration: :environment do
+  task twitter_marital: :environment do
     puts "Pulling twitter marital data..."
     Tweet.destroy_all(dataset: "marital")
     TwitterService.new.find("marital")

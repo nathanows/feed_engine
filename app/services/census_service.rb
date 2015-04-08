@@ -34,51 +34,11 @@ class CensusService
   end
 
   def generate_tables(table_number, specifier=nil)
-    if specifier == "poverty"
-      fields= ""
-      (1..30).each do |x|
-        fields += "#{table_number}_#{'%03i' % x}E,"
-      end
-      fields[0..-2]
-    elsif specifier == "education"
-      fields =""
-      fields += "#{table_number}_#{'%03i' % 1}E,"
-      fields += "#{table_number}_#{'%03i' % 2}E,"
-      fields += "#{table_number}_#{'%03i' % 17}E,"
-      fields += "#{table_number}_#{'%03i' % 18}E,"
-      fields += "#{table_number}_#{'%03i' % 22}E,"
-      fields += "#{table_number}_#{'%03i' % 23}E,"
-      fields += "#{table_number}_#{'%03i' % 24}E,"
-      fields += "#{table_number}_#{'%03i' % 25}E,"
-      fields[0..-2]
-    elsif specifier == "migration"
-      fields= ""
-      (1..6).each do |x|
-        fields += "#{table_number}_#{'%03i' % x}E,"
-      end
-      fields[0..-2]
-    elsif specifier == "marital"
-      fields = ""
-      (1..11).each do |x|
-        fields += "#{table_number}_#{'%03i' % x}E,"
-      end
-      fields[0..-2]
-    end
+    CensusTableQuery.format(table_number, specifier)
   end
 
   def all_states
     "state:*"
-  end
-
-  def table_lookup(type)
-    case type
-    when "poverty" then "B17001"
-    when "migration" then "B07002"
-    when "education" then "B15003"
-    when "marital" then "B12501"
-    else
-      raise ArgumentError "The Table type doesn't exist"
-    end
   end
 
   def parse(data)
