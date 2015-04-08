@@ -9,6 +9,7 @@ gem "faraday"
 gem "twitter"
 gem 'whenever', :require => false
 gem "active_model_serializers", "~>0.8.0"
+gem "sentimental"
 
 group :development, :test do
   gem "rspec-rails", "~> 3.0"
