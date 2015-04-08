@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :tweet do
     dataset       "dummy"
-    text          "sewing dummy #burn"
+    text          "sewing dummy #burn libellous"
     screen_name   "dumdum"
     user_name     "Hello all"
     user_prof_pic "http://www.sewersunite.com"

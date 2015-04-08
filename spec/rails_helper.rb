@@ -18,6 +18,7 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   FactoryGirl.reload
+  Sentimental.load_defaults
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
 end
