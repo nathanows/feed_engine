@@ -10,6 +10,13 @@ namespace :pull_data do
     Rake::Task["pull_data:twitter_migration"].execute
   end
 
+  desc "Run all twitter data pulls for updating database"
+  task all_twitter: :environment do
+    Rake::Task["pull_data:twitter_poverty"].execute
+    Rake::Task["pull_data:twitter_education"].execute
+    Rake::Task["pull_data:twitter_migration"].execute
+  end
+
   desc "Pull 2010 census migration data and save to StateMigrationData model"
   task census_migration_2010: :environment do
     puts "Pulling census migration data..."

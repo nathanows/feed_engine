@@ -7,6 +7,7 @@ gem 'pg'
 gem 'figaro'
 gem "faraday"
 gem "twitter"
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
