@@ -20,6 +20,6 @@ class StateMigrationDataSerializer < ActiveModel::Serializer
   end
 
   def to_percentage(attribute1)
-    attribute1.to_f * 100
+    (attribute1.to_f * 100).round(2)
   end
 end
