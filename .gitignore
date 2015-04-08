@@ -13,8 +13,6 @@
 /tmp
 .DS_Store
 
-# Ignore application configuration
-/config/application.yml
 
-# Ignore VCR
-/spec/fixtures/vcr_cassettes
+# Ignore application configuration
+config/application.yml
