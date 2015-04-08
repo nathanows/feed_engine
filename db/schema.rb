@@ -93,4 +93,5 @@ ActiveRecord::Schema.define(version: 20150407201920) do
     t.string   "location"
     t.integer  "twitter_id",    limit: 8
   end
+
 end
