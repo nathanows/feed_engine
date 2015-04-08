@@ -45,4 +45,19 @@ RSpec.describe CensusService do
       end
     end
   end
+
+  it "returns back marital census json data" do
+    VCR.use_cassette("marital data", :re_record_interval => 7.days) do
+      json_data = service.save_marital_data(2013)
+      expect(json_data.first.first).to eql("B12501_001E")
+      expect(json_data.first.second).to eql("B12501_002E")
+      expect(json_data.first.third).to eql("B12501_003E")
+      expect(json_data.first.fourth).to eql("B12501_004E")
+      expect(json_data.first.last).to eql("state")
+      expect(json_data.length).to eql(53)
+      json_data.each do |state_data|
+        expect(state_data.length).to eql(12)
+      end
+    end
+  end
 end
