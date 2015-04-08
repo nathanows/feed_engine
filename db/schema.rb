@@ -82,4 +82,5 @@ ActiveRecord::Schema.define(version: 20150405205332) do
     t.integer "female_below_poverty_over75"
     t.string  "state"
   end
+
 end
