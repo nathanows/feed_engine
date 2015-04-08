@@ -1,6 +1,4 @@
 class EducationDataGenerator
-  extend StateLookupHelper
-
   # remember that the first array is just table columns so we want to skip that.
   # Data is the form of nested arrays which is unusual for json data.
 
@@ -17,7 +15,7 @@ class EducationDataGenerator
         a.masters_degree              = record[5]
         a.professional_degree         = record[6]
         a.doctorate_degree            = record[7]
-        a.state                       = state_names[record[30]]
+        a.state                       = CensusDataMapper::STATE_NAMES[record[8]]
         a.save
       end
     end

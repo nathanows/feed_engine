@@ -1,6 +1,5 @@
-module StateLookupHelper
-  def state_names
-    {
+module CensusDataMapper
+  STATE_NAMES = {
       "01" => "AL", "02" => "AK", "04" => "AZ", "05" => "AR", "06" => "CA",
       "08" => "CO", "09" => "CT", "10" => "DE", "11" => "DC", "12" => "FL",
       "13" => "GA", "15" => "HI", "16" => "ID", "17" => "IL", "18" => "IN",
@@ -13,5 +12,15 @@ module StateLookupHelper
       "50" => "VT", "51" => "VA", "53" => "WA", "54" => "WV", "55" => "WI",
       "56" => "WY", "72" => "PR"
     }
+
+  def self.table_names(type)
+    case type
+    when "poverty" then "B17001"
+    when "migration" then "B07002"
+    when "education" then "B15003"
+    when "marital" then "B12501"
+    else
+      raise ArgumentError "The Table type doesn't exist"
+    end
   end
 end

@@ -1,5 +1,4 @@
 class CensusService
-
   def initialize
     @connection = Faraday.new(url: "http://api.census.gov/data/")
   end
@@ -29,7 +28,7 @@ class CensusService
   def get_data(type, year)
     @connection.get do |req|
       req.url "#{year}/acs5", key: Figaro.env.census_key
-      req.params["get"] = generate_tables(table_lookup(type), type)
+      req.params["get"] = generate_tables(CensusDataMapper.table_names(type), type)
       req.params["for"] = all_states
     end
   end

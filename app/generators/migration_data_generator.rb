@@ -10,7 +10,7 @@ class MigrationDataGenerator
         a.moved_from_different_county_within_same_state = record[3]
         a.moved_from_different_state                    = record[4]
         a.moved_from_abroad                             = record[5]
-        a.state                                         = record[6]
+        a.state                                         = CensusDataMapper::STATE_NAMES[record[6]]
         a.save
       end
     end
