@@ -1,5 +1,5 @@
 class MaritalDataGenerator
-  extend StateLookupHelper
+  extend CensusDataMapper
 
   def self.call(data, year)
     data.each_with_index do |record, i|
@@ -17,7 +17,7 @@ class MaritalDataGenerator
         a.female_ever_married                                         = record[8]
         a.female_ever_married_and_married_last_year                   = record[9]
         a.female_ever_married_and_not_married_last_year               = record[10]
-        a.state                                                       = record[11]
+        a.state                                                       = CensusDataMapper::STATE_NAMES[record[11]]
         a.save
       end
     end

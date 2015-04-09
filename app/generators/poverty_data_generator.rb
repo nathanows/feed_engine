@@ -1,5 +1,4 @@
 class PovertyDataGenerator
-  extend StateLookupHelper
 
   def self.call(data, year)
     data.each_with_index do |record, i|
@@ -36,7 +35,7 @@ class PovertyDataGenerator
         a.female_below_poverty_55to64 = record[27]
         a.female_below_poverty_65to74 = record[28]
         a.female_below_poverty_over75 = record[29]
-        a.state                       = state_names[record[30]]
+        a.state                       = CensusDataMapper::STATE_NAMES[record[30]]
         a.save
       end
     end

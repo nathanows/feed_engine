@@ -21,6 +21,7 @@ class TwitterService
     when "poverty" then "%23poverty OR poverty"
     when "migration" then "%23transplants OR %23moving OR transplants"
     when "education" then "%23education OR education"
+    when "marital" then "%23marriage OR marriage"
     else
       raise ArgumentError "The dataset specified doesn't exist"
     end
