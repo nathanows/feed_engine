@@ -6,26 +6,6 @@ class CensusTableQuery
     end.join(",")
   end
 
-
-    # if specifier == "poverty"
-    #   POVERTY_COLUMNS.map do |x|
-    #     "#{table_number}_#{'%03i' % x}E"
-    #   end.join(",")
-    # elsif specifier == "education"
-    #   EDUCATION_COLUMNS.map do |x|
-    #     "#{table_number}_#{'%03i' % x}E"
-    #   end.join(",")
-    # elsif specifier == "migration"
-    #   MIGRATION_COLUMNS.map do |x|
-    #     "#{table_number}_#{'%03i' % x}E"
-    #   end.join(",")
-    # elsif specifier == "marital"
-    #   MARITAL_COLUMNS.map do |x|
-    #     "#{table_number}_#{'%03i' % x}E"
-    #   end.join(",")
-    # end
-  # end
-
   private
 
   def self.specifier_to_census_columns
