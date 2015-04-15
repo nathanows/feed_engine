@@ -25,11 +25,11 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Last-Modified:
-      - Fri, 03 Apr 2015 14:14:07 GMT
+      - Tue, 14 Apr 2015 13:22:47 GMT
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Mon, 06 Apr 2015 22:32:26 GMT
+      - Tue, 14 Apr 2015 21:12:54 GMT
       Vary:
       - Accept-Encoding, User-Agent
       Content-Length:
@@ -93,5 +93,5 @@ http_interactions:
         ["371096","1254","92772","20581","60011","21694","4711","3615","56"],
         ["2440974","75374","545104","82504","401067","99711","29776","18276","72"]]
     http_version: 
-  recorded_at: Mon, 06 Apr 2015 22:32:26 GMT
+  recorded_at: Tue, 14 Apr 2015 21:12:55 GMT
 recorded_with: VCR 2.9.3
