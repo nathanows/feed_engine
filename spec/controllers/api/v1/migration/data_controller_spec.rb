@@ -11,7 +11,7 @@ RSpec.describe Api::V1::Migration::DataController, type: :controller do
 
       expect(response).to have_http_status(:success)
       expect(data.first["year"]).to eq(2010)
-      expect(data.first["median_age"]).to eq("38")
+      expect(data.first["median_age"]).to eq(38.0)
       expect(data.first["state"]).to eq("CO")
     end
 
