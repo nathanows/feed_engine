@@ -7,7 +7,7 @@ class CensusTableQuery
   end
 
   private
-
+``
   def self.specifier_to_census_columns
     {
       "poverty" => (1..30).to_a,

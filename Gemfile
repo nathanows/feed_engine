@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "4.2.1"
 gem "rails-api"
-gem "spring", :group => :development
+gem "spring", "~>1.3.4", :group => :development
 gem "pg"
 gem "figaro"
 gem "faraday"
