@@ -20,7 +20,7 @@ RSpec.describe Api::V1::Marital::DataController, type: :controller do
 
       expect(response).to have_http_status(:success)
       expect(data.first["never_married_percentage"]).to eq(54.84)
-      expect(data.first["ever_married_percentage"]).to eq(26.61)
+      expect(data.first["ever_married_percentage"]).to eq(48.39)
     end
   end
 end
