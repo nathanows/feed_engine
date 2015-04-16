@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :state_marital_data do
     year                                                        2010
-    population                                                  12400000                                  
+    population                                                  12400000                                 
     male_population                                             6000000                   
     male_never_married                                          3200000
     male_ever_married                                           2800000
