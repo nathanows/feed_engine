@@ -12,14 +12,10 @@ class StateMigrationDataSerializer < ActiveModel::Serializer
              :from_abroad_percent
 
   def different_state_percent
-    round_number(object.moved_from_different_state)
+    object.moved_from_different_state
   end
 
   def from_abroad_percent
-    round_number(object.moved_from_abroad)
-  end
-
-  def round_number(attribute1)
-    attribute1.round(2)
+    object.moved_from_abroad
   end
 end
