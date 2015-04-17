@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  match '*any' => 'application#options', :via => [:options]
-
   namespace :api do
     namespace :v1 do
       namespace :map do
