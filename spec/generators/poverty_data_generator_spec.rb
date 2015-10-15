@@ -19,6 +19,7 @@ RSpec.describe PovertyDataGenerator do
             "68221","48964","47968","36666",
             "22773","27573","01"]]
     PovertyDataGenerator.call(data, 2010)
+
     expect(StatePovertyData.count).to eql(1)
   end
 end

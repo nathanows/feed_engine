@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
       namespace :poverty do
         get '/', to: 'poverty#index'
-        get '/data', to: 'data#index'
+        get '/data', to: 'data#index' .
         get '/tweets', to: 'tweets#index'
       end
 

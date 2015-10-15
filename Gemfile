@@ -10,6 +10,7 @@ gem "twitter"
 gem 'whenever', :require => false
 gem "active_model_serializers", "~>0.8.0"
 gem "sentimental"
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem "rspec-rails", "~> 3.0"
